@@ -42,12 +42,14 @@ def list_folders_files(path):
     list_folders = []
     # 文件路径列表
     list_files = []
+
     for file in os.listdir(path):
         file_path = os.path.join(path, file)
         if os.path.isdir(file_path):
             list_folders.append(file_path)
         else:
-            list_files.append(file)
+            if file.endswith('.lrc'):
+                list_files.append(file)
 
     return list_files, list_folders
 
@@ -81,6 +83,7 @@ def user_input():
     else:
         if not os.path.exists(file_path):
             print("不存在该目录，程序退出")
+
     return file_path
 
 if __name__ == '__main__':
