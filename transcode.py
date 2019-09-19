@@ -12,8 +12,7 @@ def convert(file_name, file_path, in_code="GBK", out_code="UTF-8"):
     :param out_code: 输出文件格式，默认UTF-8
     :return:
     '''
-    if in_code == "UTF-8":
-        return 0
+
     # 文件位置
     file = os.path.join(file_path, file_name)
     try:
